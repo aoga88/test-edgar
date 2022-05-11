@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->group(function () {
 
+    Route::post('/save-name', 'Api\TestApiController@create');
+
+
     Route::prefix('profile')->group(function () {
         Route::get('/', 'Api\ProfileController@get');
         Route::put('/', 'Api\ProfileController@update');

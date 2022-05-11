@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,11 @@ Route::middleware('auth')->group(function() {
 });
 
 Route::get('/logout', function () {
-    \Illuminate\Support\Facades\Auth::logout();
+  Auth::logout();
     return response()->redirectTo('/');
 })->middleware('auth');
+
+
+// Route::get('/names', 'TestController@index')->middleware('auth');
+Route::get('/names', 'TestController@index');
+// Route::get('/lo', 'Controller@test');
