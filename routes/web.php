@@ -45,6 +45,5 @@ Route::get('/logout', function () {
 })->middleware('auth');
 
 
-// Route::get('/names', 'TestController@index')->middleware('auth');
-Route::get('/names', 'TestController@index');
-// Route::get('/lo', 'Controller@test');
+Route::get('/names', 'TestController@index')->middleware('auth');
+
